@@ -109,21 +109,7 @@ export const AppProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  // Fetch all user-specific data when the user is set
-  useEffect(() => {
-    if (user && user.email) {
-      refreshAllData();
-    } else {
-      setStudents([]);
-      setRooms([]);
-      setFaculties([]);
-      setNotifications([]);
-      setSeatingPlans([]);
-      setCurrentSeatingPlan(null);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
-
+  /* eslint-disable */
   const refreshAllData = async () => {
     if (!user || !user.email) return;
     await Promise.all([
@@ -134,6 +120,23 @@ export const AppProvider = ({ children }) => {
       fetchReports(),
     ]);
   };
+  /* eslint-enable */
+
+  // Fetch all user-specific data when the user is set
+  useEffect(() => {
+    if (user && user.email) {
+      refreshAllData();
+    } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setStudents([]);
+      setRooms([]);
+      setFaculties([]);
+      setNotifications([]);
+      setSeatingPlans([]);
+      setCurrentSeatingPlan(null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   // ─────────────────────────────────────────────────────────
   // Auth Operations — now powered by Firebase Authentication
@@ -506,7 +509,9 @@ export const AppProvider = ({ children }) => {
     if (!user) return;
     try {
       await api.deleteFinalReports(user.email);
-    } catch (_) {}
+    } catch {
+      // ignore
+    }
 
     const promises = plan.allocations.map(alloc =>
       api.addFinalReport({

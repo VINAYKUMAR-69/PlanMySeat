@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import Modal from '../components/Modal';
 import { FaPlus, FaTrash, FaEdit, FaSync, FaDoorClosed } from 'react-icons/fa';

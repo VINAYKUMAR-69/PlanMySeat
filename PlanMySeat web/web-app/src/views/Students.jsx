@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import Modal from '../components/Modal';
-import { FaSearch, FaFilter, FaPlus, FaTrash, FaEdit, FaUpload, FaDownload, FaSync } from 'react-icons/fa';
+import { FaSearch, FaPlus, FaTrash, FaEdit, FaUpload, FaDownload, FaSync } from 'react-icons/fa';
 
 export default function Students() {
   const { 
@@ -24,7 +24,6 @@ export default function Students() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState('add'); // 'add' | 'edit'
   const [targetRegNo, setTargetRegNo] = useState(''); // for edits
-  const [targetId, setTargetId] = useState(null); // for edits
 
   // Form Fields
   const [name, setName] = useState('');
@@ -84,7 +83,6 @@ export default function Students() {
   const handleOpenEdit = (student) => {
     setModalMode('edit');
     setTargetRegNo(student.regNo);
-    setTargetId(student.id);
     setName(student.name || '');
     setRegNo(student.regNo || '');
     setBranch(student.branch || '');

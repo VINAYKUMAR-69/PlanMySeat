@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { api } from '../api/client';
 import { FaCheckCircle, FaExclamationTriangle, FaStar, FaBug, FaLightbulb, FaCommentAlt } from 'react-icons/fa';

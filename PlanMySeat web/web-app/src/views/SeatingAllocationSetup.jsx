@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/set-state-in-effect */
+import { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { FaMinus, FaPlus, FaCalendarAlt, FaClock, FaExclamationTriangle, FaCheckCircle, FaChevronRight } from 'react-icons/fa';
 
@@ -12,7 +13,6 @@ export default function SeatingAllocationSetup({ setCurrentView }) {
   
   // Selection
   const [roomSelectionCount, setRoomSelectionCount] = useState(1);
-  const [alertOpen, setAlertOpen] = useState(false);
   const [useAllOverride, setUseAllOverride] = useState(false);
 
   // Maximum constraints
@@ -224,7 +224,7 @@ export default function SeatingAllocationSetup({ setCurrentView }) {
             <div className="selected-rooms-scroll-list margin-top-md">
               <h4>Classrooms in active plan:</h4>
               <ul>
-                {selectedRooms.map((room, idx) => (
+                {selectedRooms.map((room) => (
                   <li key={room.id}>
                     <span>• Room {room.roomNumber} ({room.building})</span>
                     <strong>{room.capacity} seats</strong>
