@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="24dp"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Examination Seating Arrangement"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvReportRoomName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="Room A-101"
+            android:textColor="#2563EB"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvReportBuilding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Block A"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvFacultyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:text="Faculty: Not Assigned"
+            android:textColor="#1E293B"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvReportExamType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="Mid-Term Exam"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvReportDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:text="Date: May 15th, 2026 • Time: 10:00 AM"
+            android:textColor="#64748B"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#E2E8F0" />
+
+        <TableLayout
+            android:id="@+id/tlReportTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:stretchColumns="2">
+
+            <TableRow
+                android:background="#F8FAFC"
+                android:padding="8dp">
+                <TextView android:text="S.No" android:textStyle="bold" android:textSize="11sp" android:textColor="#64748B" android:paddingEnd="12dp"/>
+                <TextView android:text="Seat Num" android:textStyle="bold" android:textSize="11sp" android:textColor="#64748B" android:paddingEnd="12dp"/>
+                <TextView android:text="Student Name" android:textStyle="bold" android:textSize="11sp" android:textColor="#64748B" />
+                <TextView android:text="Registration No" android:textStyle="bold" android:textSize="11sp" android:textColor="#64748B" android:paddingStart="12dp"/>
+                <TextView android:text="Branch" android:textStyle="bold" android:textSize="11sp" android:textColor="#64748B" android:gravity="end" android:paddingStart="12dp"/>
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#E2E8F0" />
+
+        <TextView
+            android:id="@+id/tvReportFooterSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Room: A-101 | Total Students: 20"
+            android:textColor="#64748B"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    tools:context=".ActivityMonitorActivity">
+
+    <!-- Header Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#0F172A"
+                android:contentDescription="Back" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Activity Monitor"
+                    android:textColor="#0F172A"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Real-time user activity and system performance"
+                    android:textColor="#64748B"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRefresh"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Refresh"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    app:icon="@drawable/ic_history"
+                    app:iconSize="14dp"
+                    app:strokeColor="#E2E8F0" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:backgroundTint="#2563EB"
+                    android:text="Export"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:icon="@drawable/ic_upload"
+                    app:iconSize="14dp"
+                    app:iconTint="@color/white" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Summary Cards Row 1 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#2563EB"
+                app:cardCornerRadius="12dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp">
+                    <ImageView android:id="@+id/ivActiveUsers" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_person" app:tint="@color/white" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/ivActiveUsers" android:layout_marginTop="8dp" android:text="Active Users" android:textColor="#DBEAFE" />
+                    <TextView android:id="@+id/tvActiveUsersCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="5" android:textColor="@color/white" android:textSize="32sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/tvActiveUsersTrend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_alignParentBottom="true" android:text="+12%" android:textColor="#93C5FD" android:textSize="10sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#10B981"
+                app:cardCornerRadius="12dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp">
+                    <ImageView android:id="@+id/ivSessions" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_history" app:tint="@color/white" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/ivSessions" android:layout_marginTop="8dp" android:text="Total Sessions" android:textColor="#D1FAE5" />
+                    <TextView android:id="@+id/tvTotalSessionsCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="103" android:textColor="@color/white" android:textSize="32sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/tvTotalSessionsTrend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_alignParentBottom="true" android:text="+8%" android:textColor="#6EE7B7" android:textSize="10sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#8B5CF6"
+                app:cardCornerRadius="12dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp">
+                    <ImageView android:id="@+id/ivAvgTime" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_clock" app:tint="@color/white" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/ivAvgTime" android:layout_marginTop="8dp" android:text="Avg. Session Time" android:textColor="#EDE9FE" />
+                    <TextView android:id="@+id/tvAvgSessionTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="24m" android:textColor="@color/white" android:textSize="32sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/tvAvgSessionTrend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_alignParentBottom="true" android:text="-5%" android:textColor="#C4B5FD" android:textSize="10sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="#F97316"
+                app:cardCornerRadius="12dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp">
+                    <ImageView android:id="@+id/ivActions" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_play" app:tint="@color/white" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/ivActions" android:layout_marginTop="8dp" android:text="Actions / Day" android:textColor="#FFEDD5" />
+                    <TextView android:id="@+id/tvActionsPerDay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:text="425" android:textColor="@color/white" android:textSize="32sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/tvActionsTrend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_alignParentBottom="true" android:text="+15%" android:textColor="#FDBA74" android:textSize="10sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Activity Timeline -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Activity Timeline"
+                        android:textColor="#1E293B"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="User activity over last 7 days"
+                        android:textColor="#64748B"
+                        android:textSize="11sp" />
+
+                    <com.simats.automaticexamseatting.LineChartView
+                        android:id="@+id/lineChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="16dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Distribution Charts -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Device Distribution"
+                        android:textColor="#1E293B"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Users by device type"
+                        android:textColor="#64748B"
+                        android:textSize="11sp" />
+
+                    <com.simats.automaticexamseatting.DonutChartView
+                        android:id="@+id/donutChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="16dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Browser Distribution"
+                        android:textColor="#1E293B"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sessions by browser"
+                        android:textColor="#64748B"
+                        android:textSize="11sp" />
+
+                    <com.simats.automaticexamseatting.BarChartView
+                        android:id="@+id/browserChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="16dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Most Visited Pages -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Most Visited Pages"
+                        android:textColor="#1E293B"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Popular destinations"
+                        android:textColor="#64748B"
+                        android:textSize="11sp" />
+
+                    <LinearLayout
+                        android:id="@+id/llMostVisited"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Active Users Table -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:gravity="center_vertical">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_active_exams" app:tint="#10B981" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Active Users Now" android:textColor="#1E293B" android:textStyle="bold" />
+                            <TextView android:id="@+id/tvActiveUsersTableSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5 users currently online" android:textColor="#64748B" android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Table Header -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="#F8FAFC"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="16dp">
+                                <TextView android:layout_width="150dp" android:layout_height="wrap_content" android:text="User" android:textSize="12sp" android:textColor="#64748B" />
+                                <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="Current Page" android:textSize="12sp" android:textColor="#64748B" />
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="Device" android:textSize="12sp" android:textColor="#64748B" />
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="Browser" android:textSize="12sp" android:textColor="#64748B" />
+                                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Login" android:textSize="12sp" android:textColor="#64748B" />
+                                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="Last Seen" android:textSize="12sp" android:textColor="#64748B" />
+                                <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Actions" android:textSize="12sp" android:textColor="#64748B" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llActiveUsersContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Footer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="© 2026 PlanMySeat. All rights reserved."
+                    android:textColor="#94A3B8"
+                    android:textSize="12sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About · Terms · Support"
+                    android:textColor="#94A3B8"
+                    android:textSize="11sp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

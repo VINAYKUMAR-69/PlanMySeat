@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:orientation="vertical"
+    tools:context=".AnalysisActivity">
+
+    <!-- Header -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Analysis"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Branch Distribution\nAnalysis"
+                android:textColor="#0F172A"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="How students are distributed\nacross branches and rooms"
+                android:textColor="#64748B"
+                android:textSize="14sp" />
+
+            <!-- Separation Score Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Separation Score"
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="100%"
+                        android:textColor="#10B981"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Higher is better"
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Total Branches Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Branches"
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="4"
+                        android:textColor="#2563EB"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Represented"
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Rooms Used Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rooms Used"
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="0"
+                        android:textColor="#A855F7"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Out of 5"
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Branch Distribution by Room (Bar Chart Placeholder) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Branch Distribution by Room"
+                        android:textColor="#1E293B"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Number of students from each\nbranch per room"
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
+
+                    <!-- Custom Bar Chart Drawing -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:layout_marginTop="16dp">
+
+                        <View
+                            android:id="@+id/baseLine"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="40dp"
+                            android:background="#E2E8F0" />
+
+                        <!-- Horizontal Grid Lines -->
+                        <View android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_above="@id/baseLine" android:layout_marginBottom="40dp" android:background="#F1F5F9" />
+                        <View android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_above="@id/baseLine" android:layout_marginBottom="80dp" android:background="#F1F5F9" />
+                        <View android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_above="@id/baseLine" android:layout_marginBottom="120dp" android:background="#F1F5F9" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_above="@id/baseLine"
+                            android:gravity="bottom"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="24dp">
+                            <View android:layout_width="20dp" android:layout_height="60dp" android:background="#3B82F6" android:layout_marginEnd="32dp"/>
+                            <View android:layout_width="20dp" android:layout_height="30dp" android:background="#8B5CF6" android:layout_marginEnd="32dp"/>
+                            <View android:layout_width="20dp" android:layout_height="45dp" android:background="#EC4899" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="16dp"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="24dp">
+                            <TextView android:layout_width="20dp" android:layout_height="wrap_content" android:text="A-101" android:textSize="8sp" android:textColor="#94A3B8" android:layout_marginEnd="32dp" android:gravity="center"/>
+                            <TextView android:layout_width="20dp" android:layout_height="wrap_content" android:text="B-301" android:textSize="8sp" android:textColor="#94A3B8" android:layout_marginEnd="32dp" android:gravity="center"/>
+                            <TextView android:layout_width="20dp" android:layout_height="wrap_content" android:text="C-301" android:textSize="8sp" android:textColor="#94A3B8" android:gravity="center"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Overall Branch Distribution (Pie Chart) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overall Branch Distribution"
+                        android:textColor="#1E293B"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Pie chart showing student distribution"
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="220dp"
+                        android:layout_height="220dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/vd_pie_chart" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Branch Separation Quality -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Branch Separation Quality"
+                        android:textColor="#1E293B"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Analysis of how well branches\nare separated"
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
+
+                    <!-- Progress Indicators -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View android:layout_width="12dp" android:layout_height="12dp" android:background="#3B82F6" android:layout_marginEnd="12dp"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="CSE" android:textColor="#1E293B" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 allocated / 4 total" android:textColor="#64748B" android:textSize="12sp" />
+                    </LinearLayout>
+                    <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:progress="0" android:progressTint="#3B82F6" android:layout_marginTop="4dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View android:layout_width="12dp" android:layout_height="12dp" android:background="#8B5CF6" android:layout_marginEnd="12dp"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="ECE" android:textColor="#1E293B" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 allocated / 2 total" android:textColor="#64748B" android:textSize="12sp" />
+                    </LinearLayout>
+                    <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:progress="0" android:progressTint="#8B5CF6" android:layout_marginTop="4dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View android:layout_width="12dp" android:layout_height="12dp" android:background="#EC4899" android:layout_marginEnd="12dp"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Mechanical" android:textColor="#1E293B" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 allocated / 2 total" android:textColor="#64748B" android:textSize="12sp" />
+                    </LinearLayout>
+                    <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:progress="0" android:progressTint="#EC4899" android:layout_marginTop="4dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View android:layout_width="12dp" android:layout_height="12dp" android:background="#F59E0B" android:layout_marginEnd="12dp"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="EEE" android:textColor="#1E293B" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 allocated / 2 total" android:textColor="#64748B" android:textSize="12sp" />
+                    </LinearLayout>
+                    <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:progress="0" android:progressTint="#F59E0B" android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

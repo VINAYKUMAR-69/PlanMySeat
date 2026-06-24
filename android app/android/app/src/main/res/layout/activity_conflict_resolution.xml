@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:orientation="vertical"
+    tools:context=".ConflictResolutionActivity">
+
+    <!-- Header -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black"
+                android:contentDescription="Menu" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                app:cardBackgroundColor="@color/blue_primary"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivMenu"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_school"
+                    app:tint="@color/white"
+                    android:contentDescription="Logo" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:id="@+id/flNotifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_notifications"
+                        app:tint="@color/black"
+                        android:contentDescription="Notifications" />
+
+                    <TextView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-2dp"
+                        android:layout_marginEnd="-2dp"
+                        android:background="@drawable/bg_dark_button"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/white"
+                        android:textSize="9sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvProfile"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:cardBackgroundColor="@color/blue_primary"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conflict Resolution"
+                android:textColor="#0F172A"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Identify and resolve seating conflicts"
+                android:textColor="#64748B"
+                android:textSize="14sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAutoFixAll"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#0F172A"
+                android:text="Auto-Fix All"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_clock"
+                app:iconPadding="8dp"
+                app:iconTint="@color/white" />
+
+            <!-- Summary Cards -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <!-- Row 1: Total Conflicts & High Priority -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                     <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+                            <TextView android:id="@+id/labelTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total Conflicts" android:textSize="12sp" android:textColor="#64748B"/>
+                            <TextView android:id="@+id/tvTotalConflicts" android:layout_below="@id/labelTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4" android:textSize="24sp" android:textStyle="bold" android:textColor="#0F172A" android:layout_marginTop="4dp"/>
+                            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:src="@drawable/ic_error" app:tint="#EF4444"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+                        <TextView android:id="@+id/labelHigh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="High Priority" android:textSize="12sp" android:textColor="#64748B"/>
+                        <TextView android:id="@+id/tvHighPriority" android:layout_below="@id/labelHigh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textSize="24sp" android:textStyle="bold" android:textColor="#EF4444" android:layout_marginTop="4dp"/>
+                        <View android:layout_width="24dp" android:layout_height="24dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:background="@drawable/ic_error" android:backgroundTint="#EF4444"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+                        <TextView android:id="@+id/labelResolved" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Resolved" android:textSize="12sp" android:textColor="#64748B"/>
+                        <TextView android:id="@+id/tvResolved" android:layout_below="@id/labelResolved" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textSize="24sp" android:textStyle="bold" android:textColor="#10B981" android:layout_marginTop="4dp"/>
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:src="@drawable/ic_check_circle" app:tint="#10B981"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+                        <TextView android:id="@+id/labelAuto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Auto-Fixable" android:textSize="12sp" android:textColor="#64748B"/>
+                        <TextView android:id="@+id/tvAutoFixable" android:layout_below="@id/labelAuto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3" android:textSize="24sp" android:textStyle="bold" android:textColor="#2563EB" android:layout_marginTop="4dp"/>
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:src="@drawable/ic_clock" app:tint="#2563EB"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Active Conflicts"
+                android:textColor="#0F172A"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Conflicts that need attention in your current seating arrangement"
+                android:textColor="#64748B"
+                android:textSize="13sp" />
+
+            <!-- Active Conflict Items -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <!-- Item 1: CSE students adjacent -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvConflict1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <ImageView android:id="@+id/icon1" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_person" app:tint="#2563EB"/>
+                            <TextView android:id="@+id/priority1" android:layout_toEndOf="@id/icon1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="HIGH PRIORITY" android:textSize="10sp" android:textStyle="bold" android:textColor="#EF4444" android:background="#FEE2E2" android:paddingHorizontal="6dp" android:paddingVertical="2dp"/>
+                            <TextView android:layout_toEndOf="@id/priority1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="Auto-Fixable" android:textSize="10sp" android:textColor="#64748B"/>
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnResolve1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_alignParentEnd="true"
+                                android:backgroundTint="#0F172A"
+                                android:text="Auto-Resolve"
+                                android:textSize="10sp"
+                                android:textAllCaps="false"
+                                android:paddingHorizontal="8dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                app:cornerRadius="4dp" />
+                        </RelativeLayout>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="3 CSE students seated adjacent to each other in Room A-101" android:textStyle="bold" android:textColor="#0F172A" android:textSize="14sp"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="3 students affected: Rahul Sharma, Sneha Reddy, Vikram Rao" android:textColor="#64748B" android:textSize="12sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Item 2: Same year front rows -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvConflict2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <ImageView android:id="@+id/icon2" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_calendar" app:tint="#F59E0B"/>
+                            <TextView android:id="@+id/priority2" android:layout_toEndOf="@id/icon2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="MEDIUM PRIORITY" android:textSize="10sp" android:textStyle="bold" android:textColor="#F59E0B" android:background="#FEF3C7" android:paddingHorizontal="6dp" android:paddingVertical="2dp"/>
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnResolve2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_alignParentEnd="true"
+                                android:backgroundTint="#0F172A"
+                                android:text="Auto-Resolve"
+                                android:textSize="10sp"
+                                android:textAllCaps="false"
+                                android:paddingHorizontal="8dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                app:cornerRadius="4dp" />
+                        </RelativeLayout>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Students from same year seated in front rows of Room A-102" android:textStyle="bold" android:textColor="#0F172A" android:textSize="14sp"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="2 students affected: Priya Patel, Anjali Gupta" android:textColor="#64748B" android:textSize="12sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Item 3: Capacity -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvConflict3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <ImageView android:id="@+id/icon3" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_school" app:tint="#64748B"/>
+                            <TextView android:id="@+id/priority3" android:layout_toEndOf="@id/icon3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="LOW PRIORITY" android:textSize="10sp" android:textStyle="bold" android:textColor="#64748B" android:background="#F1F5F9" android:paddingHorizontal="6dp" android:paddingVertical="2dp"/>
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnReview"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_alignParentEnd="true"
+                                android:text="Review"
+                                android:textSize="10sp"
+                                android:textAllCaps="false"
+                                android:paddingHorizontal="8dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                android:textColor="#0F172A"
+                                app:strokeColor="#E2E8F0"
+                                app:cornerRadius="4dp" />
+                        </RelativeLayout>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Room B-201 is operating at 95% capacity" android:textStyle="bold" android:textColor="#0F172A" android:textSize="14sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Item 4: ECE adjacent -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvConflict4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <ImageView android:id="@+id/icon4" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_person" app:tint="#F59E0B"/>
+                            <TextView android:id="@+id/priority4" android:layout_toEndOf="@id/icon4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="MEDIUM PRIORITY" android:textSize="10sp" android:textStyle="bold" android:textColor="#F59E0B" android:background="#FEF3C7" android:paddingHorizontal="6dp" android:paddingVertical="2dp"/>
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnResolve4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:layout_alignParentEnd="true"
+                                android:backgroundTint="#0F172A"
+                                android:text="Auto-Resolve"
+                                android:textSize="10sp"
+                                android:textAllCaps="false"
+                                android:paddingHorizontal="8dp"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                app:cornerRadius="4dp" />
+                        </RelativeLayout>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="2 ECE students in adjacent seats in Room B-202" android:textStyle="bold" android:textColor="#0F172A" android:textSize="14sp"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="2 students affected: Priya Patel, Anjali Gupta" android:textColor="#64748B" android:textSize="12sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- Conflict Prevention Tips -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Conflict Prevention Tips" android:textColor="#0F172A" android:textStyle="bold" android:textSize="16sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Best practices to avoid seating conflicts" android:textColor="#64748B" android:textSize="13sp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center_vertical" android:background="#F8FAFC">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Enable Branch Separation" android:textColor="#0F172A" android:textStyle="bold" android:textSize="13sp"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Automatically distribute students from the same branch across different rooms." android:textColor="#64748B" android:textSize="11sp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center_vertical" android:background="#F8FAFC">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Use Adequate Spacing" android:textColor="#0F172A" android:textStyle="bold" android:textSize="13sp"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Leave empty seats between students to maintain proper distance." android:textColor="#64748B" android:textSize="11sp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center_vertical" android:background="#F8FAFC">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Monitor Room Capacity" android:textColor="#0F172A" android:textStyle="bold" android:textSize="13sp"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Avoid filling rooms beyond 85% capacity for better management." android:textColor="#64748B" android:textSize="11sp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

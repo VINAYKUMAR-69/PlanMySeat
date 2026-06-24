@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/etCollegeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="College Name (e.g. IIT Delhi)"
+        android:inputType="textCapWords" />
+
+    <EditText
+        android:id="@+id/etAdminCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Number of Admins"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etStudentCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Total Students"
+        android:inputType="number" />
+
+</LinearLayout>

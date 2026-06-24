@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:orientation="vertical"
+    tools:context=".AdminPanelActivity">
+
+    <!-- Header -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black"
+                android:contentDescription="Menu" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                app:cardBackgroundColor="@color/blue_primary"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivMenu"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_school"
+                    app:tint="@color/white"
+                    android:contentDescription="Logo" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:id="@+id/flNotifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_notifications"
+                        app:tint="@color/black"
+                        android:contentDescription="Notifications" />
+
+                    <TextView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-2dp"
+                        android:layout_marginEnd="-2dp"
+                        android:background="@drawable/bg_dark_button"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/white"
+                        android:textSize="9sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvProfile"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:cardBackgroundColor="@color/blue_primary"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_back"
+                    app:tint="@color/black"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Back" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/ivBack"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Admin Control Panel"
+                        android:textColor="#0F172A"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Super admin access only"
+                        android:textColor="#64748B"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Summary Cards -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <RelativeLayout android:layout_width="match_parent" android:padding="20dp" android:layout_height="wrap_content">
+                    <ImageView android:id="@+id/icColleges" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_school" app:tint="#2563EB" />
+                    <TextView android:id="@+id/tvCollegesCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/icColleges" android:layout_marginTop="8dp" android:text="3" android:textColor="#0F172A" android:textSize="32sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/tvCollegesCount" android:text="Colleges" android:textColor="#94A3B8" android:textSize="12sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <RelativeLayout android:layout_width="match_parent" android:padding="20dp" android:layout_height="wrap_content">
+                    <ImageView android:id="@+id/icAdmins" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_person" app:tint="#10B981" />
+                    <TextView android:id="@+id/tvAdminsCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/icAdmins" android:layout_marginTop="8dp" android:text="3" android:textColor="#0F172A" android:textSize="32sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/tvAdminsCount" android:text="Administrators" android:textColor="#94A3B8" android:textSize="12sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <RelativeLayout android:layout_width="match_parent" android:padding="20dp" android:layout_height="wrap_content">
+                    <ImageView android:id="@+id/icStudents" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_students" app:tint="#A855F7" />
+                    <TextView android:id="@+id/tvStudentsCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/icStudents" android:layout_marginTop="8dp" android:text="470" android:textColor="#0F172A" android:textSize="32sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/tvStudentsCount" android:text="Total Students" android:textColor="#94A3B8" android:textSize="12sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Colleges Management Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:orientation="vertical" android:padding="20dp" android:layout_height="wrap_content">
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Colleges" android:textColor="#0F172A" android:textSize="16sp" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manage registered\ncolleges and\norganizations" android:textColor="#64748B" android:textSize="12sp" />
+                        </LinearLayout>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAddCollege"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:backgroundTint="#0F172A"
+                            android:text="+ Add College"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            app:cornerRadius="8dp" />
+                    </RelativeLayout>
+
+                    <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+                        <TableLayout android:id="@+id/tlColleges" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <!-- Headers -->
+                            <TableRow android:paddingVertical="8dp">
+                                <TextView android:text="College Name" android:paddingEnd="16dp" android:textColor="#64748B" android:textSize="11sp" android:textStyle="bold"/>
+                                <TextView android:text="Admins" android:paddingEnd="16dp" android:textColor="#64748B" android:textSize="11sp" android:textStyle="bold"/>
+                                <TextView android:text="Students" android:paddingEnd="16dp" android:textColor="#64748B" android:textSize="11sp" android:textStyle="bold"/>
+                                <TextView android:text="Status" android:paddingEnd="16dp" android:textColor="#64748B" android:textSize="11sp" android:textStyle="bold"/>
+                                <TextView android:text="Actions" android:textColor="#64748B" android:textSize="11sp" android:textStyle="bold"/>
+                            </TableRow>
+                            <View android:id="@+id/dividerColleges" android:layout_height="1dp" android:background="#F1F5F9" />
+                            <!-- Dynamic rows here -->
+                        </TableLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Administrators Management Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:orientation="vertical" android:padding="20dp" android:layout_height="wrap_content">
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Administrators" android:textColor="#0F172A" android:textSize="16sp" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manage admin\nusers and\npermissions" android:textColor="#64748B" android:textSize="12sp" />
+                        </LinearLayout>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAddAdmin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:backgroundTint="#0F172A"
+                            android:text="+ Add Admin"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            app:cornerRadius="8dp" />
+                    </RelativeLayout>
+
+                    <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+                        <TableLayout android:id="@+id/tlAdmins" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <TableRow android:paddingVertical="8dp">
+                                <TextView android:text="Name" android:paddingEnd="16dp" android:textColor="#64748B" android:textSize="11sp" android:textStyle="bold"/>
+                                <TextView android:text="Email" android:paddingEnd="16dp" android:textColor="#64748B" android:textSize="11sp" android:textStyle="bold"/>
+                                <TextView android:text="College" android:paddingEnd="16dp" android:textColor="#64748B" android:textSize="11sp" android:textStyle="bold"/>
+                                <TextView android:text="Actions" android:textColor="#64748B" android:textSize="11sp" android:textStyle="bold"/>
+                            </TableRow>
+                            <View android:id="@+id/dividerAdmins" android:layout_height="1dp" android:background="#F1F5F9" />
+                            <!-- Dynamic rows here -->
+                        </TableLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

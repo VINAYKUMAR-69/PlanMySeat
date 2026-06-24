@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "597324872367",
+    "project_id": "automaticexamseattin-7867fc75",
+    "storage_bucket": "automaticexamseattin-7867fc75.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597324872367:android:ad42247bf333892ce7b25a",
+        "android_client_info": {
+          "package_name": "com.company.PlanMySeat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597324872367-louf20235binmkk2jd8jhf09kh4jgktl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxYX7Pb_GsulNNhkOgJ9gezEIl9Or9XOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "597324872367-louf20235binmkk2jd8jhf09kh4jgktl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

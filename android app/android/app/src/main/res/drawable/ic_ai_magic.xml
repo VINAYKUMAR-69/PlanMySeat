@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Sparkles -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,5.5L13,3L14,5.5L16.5,6.5L14,7.5L13,10L12,7.5L9.5,6.5L12,5.5M5,9L6,7L7,9L9,10L7,11L6,13L5,11L3,10L5,9M19,9L20,7L21,9L23,10L21,11L20,13L19,11L17,10L19,9" />
+    <!-- Magic Ball/Core -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,12m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <!-- Symbolic Hands/Aura -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,2C6.48,2 2,6.48 2,12C2,14.46 2.89,16.71 4.36,18.46L5.78,17.04C4.67,15.67 4,13.92 4,12C4,7.58 7.58,4 12,4C16.42,4 20,7.58 20,12C20,13.92 19.33,15.67 18.22,17.04L19.64,18.46C21.11,16.71 22,14.46 22,12C22,6.48 17.52,2 12,2Z" />
+</vector>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    app:cardElevation="16dp"
+    app:cardCornerRadius="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <!-- Menu Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Main Menu"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/ivCloseMenu"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_error"
+                app:tint="#64748B" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp">
+
+                <!-- Dashboard -->
+                <LinearLayout
+                    android:id="@+id/menuDashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#EFF6FF"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_home" app:tint="#2563EB" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Dashboard" android:textColor="#2563EB" android:textSize="17sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Students Parent -->
+                <LinearLayout
+                    android:id="@+id/menuStudentsParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#F0FDF4"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_students" app:tint="#16A34A" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_weight="1" android:text="Students" android:textColor="#16A34A" android:textSize="17sp" android:textStyle="bold" />
+                    <ImageView android:id="@+id/ivStudentsArrow" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_back" android:rotation="270" app:tint="#16A34A" />
+                </LinearLayout>
+
+                <!-- Students Sub Items -->
+                <LinearLayout
+                    android:id="@+id/llStudentsSubItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone">
+                    <LinearLayout android:id="@+id/menuStudentList" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Student List" android:textColor="#16A34A" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuAddStudent" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add Student" android:textColor="#16A34A" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuCsvUpload" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CSV Upload" android:textColor="#16A34A" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuBulkOperations" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bulk Operations" android:textColor="#16A34A" android:textSize="15sp" /></LinearLayout>
+                </LinearLayout>
+
+                <!-- Faculty Parent -->
+                <LinearLayout
+                    android:id="@+id/menuFacultyParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#FEF2F2"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_faculty" app:tint="#DC2626" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_weight="1" android:text="Faculty" android:textColor="#DC2626" android:textSize="17sp" android:textStyle="bold" />
+                    <ImageView android:id="@+id/ivFacultyArrow" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_back" android:rotation="270" app:tint="#DC2626" />
+                </LinearLayout>
+
+                <!-- Faculty Sub Items -->
+                <LinearLayout
+                    android:id="@+id/llFacultySubItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone">
+                    <LinearLayout android:id="@+id/menuFacultyDashboard" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Faculty Dashboard" android:textColor="#DC2626" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuAllFaculty" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="All Faculty" android:textColor="#DC2626" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuImportFaculty" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Import Faculty" android:textColor="#DC2626" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuGeneratePlan" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Generate Plan" android:textColor="#DC2626" android:textSize="15sp" /></LinearLayout>
+                </LinearLayout>
+
+                <!-- Student Issues Parent -->
+                <LinearLayout
+                    android:id="@+id/menuStudentIssuesParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#FFF7ED"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_error" app:tint="#EA580C" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_weight="1" android:text="Student Issues" android:textColor="#EA580C" android:textSize="17sp" android:textStyle="bold" />
+                    <ImageView android:id="@+id/ivStudentIssuesArrow" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_back" android:rotation="270" app:tint="#EA580C" />
+                </LinearLayout>
+
+                <!-- Student Issues Sub Items -->
+                <LinearLayout
+                    android:id="@+id/llStudentIssuesSubItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone">
+                    <LinearLayout android:id="@+id/menuIssuesDashboard" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Issues Dashboard" android:textColor="#EA580C" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuAllIssues" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="All Issues" android:textColor="#EA580C" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuReportIssue" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Report Issue" android:textColor="#EA580C" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuArchive" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Archive" android:textColor="#EA580C" android:textSize="15sp" /></LinearLayout>
+                </LinearLayout>
+
+                <!-- Seat Allocation -->
+                <LinearLayout
+                    android:id="@+id/menuSeatAllocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#F5F3FF"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_calendar" app:tint="#7C3AED" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Seat Allocation" android:textColor="#7C3AED" android:textSize="17sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Seating Plan -->
+                <LinearLayout
+                    android:id="@+id/menuSeatingPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#F5F3FF"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_calendar" app:tint="#7C3AED" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Seating Plan" android:textColor="#7C3AED" android:textSize="17sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Conflicts Parent -->
+                <LinearLayout
+                    android:id="@+id/menuConflictsParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#FFF1F2"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_error" app:tint="#E11D48" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_weight="1" android:text="Conflicts" android:textColor="#E11D48" android:textSize="17sp" android:textStyle="bold" />
+                    <ImageView android:id="@+id/ivConflictsArrow" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_back" android:rotation="270" app:tint="#E11D48" />
+                </LinearLayout>
+
+                <!-- Conflicts Sub Items -->
+                <LinearLayout
+                    android:id="@+id/llConflictsSubItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone">
+                    <LinearLayout android:id="@+id/menuConflictDetection" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Conflict Detection" android:textColor="#E11D48" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuConflictResolution" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Conflict Resolution" android:textColor="#E11D48" android:textSize="15sp" /></LinearLayout>
+                </LinearLayout>
+
+                <!-- Rooms Parent -->
+                <LinearLayout
+                    android:id="@+id/menuRoomsParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#ECFDF5"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_rooms" app:tint="#059669" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_weight="1" android:text="Rooms" android:textColor="#059669" android:textSize="17sp" android:textStyle="bold" />
+                    <ImageView android:id="@+id/ivRoomsArrow" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_back" android:rotation="270" app:tint="#059669" />
+                </LinearLayout>
+
+                <!-- Rooms Sub Items -->
+                <LinearLayout
+                    android:id="@+id/llRoomsSubItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone">
+                    <LinearLayout android:id="@+id/menuRoomList" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Room List" android:textColor="#059669" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuAddRoom" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add Room" android:textColor="#059669" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuRoomAvailability" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Room Availability" android:textColor="#059669" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuRoomOccupied" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Occupied Rooms" android:textColor="#059669" android:textSize="15sp" /></LinearLayout>
+                </LinearLayout>
+
+                <!-- Reports -->
+                <LinearLayout
+                    android:id="@+id/menuReports"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#FDF4FF"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_reports" app:tint="#C026D3" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Reports" android:textColor="#C026D3" android:textSize="17sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Room-wise Print -->
+                <LinearLayout
+                    android:id="@+id/menuRoomPrint"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#F0F9FF"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_print" app:tint="#0EA5E9" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Room-wise Print" android:textColor="#0EA5E9" android:textSize="17sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Exam History -->
+                <LinearLayout
+                    android:id="@+id/menuExamHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#F8FAFC"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_history" app:tint="#475569" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Exam History" android:textColor="#475569" android:textSize="17sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Notifications -->
+                <LinearLayout
+                    android:id="@+id/menuNotifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#F8FAFC"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_notifications" app:tint="#475569" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Notifications" android:textColor="#475569" android:textSize="17sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Admin Parent -->
+                <LinearLayout
+                    android:id="@+id/menuAdminParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#FEFCE8"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_lock" app:tint="#CA8A04" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_weight="1" android:text="Admin" android:textColor="#CA8A04" android:textSize="17sp" android:textStyle="bold" />
+                    <ImageView android:id="@+id/ivAdminArrow" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_back" android:rotation="270" app:tint="#CA8A04" />
+                </LinearLayout>
+
+                <!-- Admin Sub Items -->
+                <LinearLayout
+                    android:id="@+id/llAdminSubItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone">
+                    <LinearLayout android:id="@+id/menuUserManagement" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="User Management" android:textColor="#CA8A04" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuRoleManagement" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Role Management" android:textColor="#CA8A04" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuSystemLogs" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="System Logs" android:textColor="#CA8A04" android:textSize="15sp" /></LinearLayout>
+                    <LinearLayout android:id="@+id/menuActivityMonitor" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="56dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Activity Monitor" android:textColor="#CA8A04" android:textSize="15sp" /></LinearLayout>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#F1F5F9" />
+
+                <!-- Settings -->
+                <LinearLayout
+                    android:id="@+id/menuSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#F8FAFC"
+                    android:layout_marginBottom="8dp">
+                    <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_settings" app:tint="#64748B" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Settings" android:textColor="#334155" android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#F1F5F9" />
+
+                <!-- MAIN BUTTON: INFO & SUPPORT (Moved to Bottom) -->
+                <LinearLayout
+                    android:id="@+id/menuInfoParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/bg_new_badge"
+                    android:backgroundTint="#4F46E5"
+                    android:elevation="4dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:paddingHorizontal="16dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_help" app:tint="@color/white" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_weight="1" android:text="Info and Support" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold" />
+                    <ImageView android:id="@+id/ivInfoArrow" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_back" android:rotation="270" app:tint="@color/white" />
+                </LinearLayout>
+
+                <!-- Info Sub Items (Colorful Buttons) -->
+                <LinearLayout
+                    android:id="@+id/llInfoSubItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp"
+                    android:visibility="gone">
+
+                    <LinearLayout android:id="@+id/menuProfile" android:layout_width="match_parent" android:layout_height="52dp" android:gravity="center_vertical" android:paddingHorizontal="16dp" android:background="@drawable/bg_new_badge" android:backgroundTint="#EEF2FF" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_person" app:tint="#4F46E5" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Profile" android:textColor="#4F46E5" android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/menuAbout" android:layout_width="match_parent" android:layout_height="52dp" android:gravity="center_vertical" android:paddingHorizontal="16dp" android:background="@drawable/bg_new_badge" android:backgroundTint="#EEF2FF" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@android:drawable/ic_menu_info_details" app:tint="#4F46E5" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="About" android:textColor="#4F46E5" android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/menuHelpCenter" android:layout_width="match_parent" android:layout_height="52dp" android:gravity="center_vertical" android:paddingHorizontal="16dp" android:background="@drawable/bg_new_badge" android:backgroundTint="#EEF2FF" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@android:drawable/ic_menu_help" app:tint="#4F46E5" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Help Center" android:textColor="#4F46E5" android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/menuSendFeedback" android:layout_width="match_parent" android:layout_height="52dp" android:gravity="center_vertical" android:paddingHorizontal="16dp" android:background="@drawable/bg_new_badge" android:backgroundTint="#EEF2FF" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@android:drawable/ic_menu_send" app:tint="#4F46E5" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Send Feedback" android:textColor="#4F46E5" android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/menuReportBug" android:layout_width="match_parent" android:layout_height="52dp" android:gravity="center_vertical" android:paddingHorizontal="16dp" android:background="@drawable/bg_new_badge" android:backgroundTint="#EEF2FF" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@android:drawable/ic_menu_report_image" app:tint="#4F46E5" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Report Bug" android:textColor="#4F46E5" android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/menuRequestFeature" android:layout_width="match_parent" android:layout_height="52dp" android:gravity="center_vertical" android:paddingHorizontal="16dp" android:background="@drawable/bg_new_badge" android:backgroundTint="#EEF2FF" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@android:drawable/ic_input_add" app:tint="#4F46E5" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Request Feature" android:textColor="#4F46E5" android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/menuFeedbackHistory" android:layout_width="match_parent" android:layout_height="52dp" android:gravity="center_vertical" android:paddingHorizontal="16dp" android:background="@drawable/bg_new_badge" android:backgroundTint="#EEF2FF" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_history" app:tint="#4F46E5" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Feedback History" android:textColor="#4F46E5" android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/menuTermsPolicy" android:layout_width="match_parent" android:layout_height="52dp" android:gravity="center_vertical" android:paddingHorizontal="16dp" android:background="@drawable/bg_new_badge" android:backgroundTint="#EEF2FF" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@android:drawable/ic_menu_agenda" app:tint="#4F46E5" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Terms &amp; Policy" android:layout_marginStart="16dp" android:textColor="#4F46E5" android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/menuAppInfo" android:layout_width="match_parent" android:layout_height="52dp" android:gravity="center_vertical" android:paddingHorizontal="16dp" android:background="@drawable/bg_new_badge" android:backgroundTint="#EEF2FF" android:layout_marginBottom="6dp">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@android:drawable/ic_menu_info_details" app:tint="#4F46E5" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="App Info" android:textColor="#4F46E5" android:textSize="15sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

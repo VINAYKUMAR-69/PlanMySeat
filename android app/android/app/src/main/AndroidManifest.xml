@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Automaticexamseatting"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".AddFacultyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GenerateFacultyPlanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ImportFacultyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AllFacultyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArchivedIssuesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AllIssuesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FacultyDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentIssuesDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportIssueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityMonitorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SystemLogsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddNewUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FeedbackHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportBugActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RequestFeatureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TermsPrivacyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpCenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoomOccupiedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoomAvailabilityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoomWiseReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminPanelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AiOptimizationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConflictResolutionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExportDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddRoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoomsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThemeSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManualAdjustmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConflictDetectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnalysisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GeneratedSeatingPlanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeatAllocationSetupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BulkOperationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CsvUploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddStudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExamHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

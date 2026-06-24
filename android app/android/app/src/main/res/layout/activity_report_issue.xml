@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    tools:context=".ReportIssueActivity">
+
+    <!-- Header -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/headerCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Report Student Issue"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="120dp"
+        app:layout_constraintTop_toBottomOf="@id/headerCard"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit a new issue or concern for a student"
+                android:textColor="#64748B"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Student Information -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+                        <androidx.cardview.widget.CardView android:layout_width="40dp" android:layout_height="40dp" app:cardBackgroundColor="#EFF6FF" app:cardCornerRadius="8dp" app:cardElevation="0dp">
+                            <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="10dp" android:src="@drawable/ic_person" app:tint="#2563EB" />
+                        </androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Student Information" android:textColor="#1E293B" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Identify the student involved in this issue" android:textColor="#64748B" android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Student ID *" android:textSize="12sp" android:textColor="#64748B" />
+                    <EditText android:id="@+id/etStudentId" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_edittext_blue" android:paddingHorizontal="12dp" android:hint="e.g. 12345678" android:textSize="14sp" android:layout_marginTop="4dp" android:layout_marginBottom="12dp" android:inputType="text" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Student Name *" android:textSize="12sp" android:textColor="#64748B" />
+                    <EditText android:id="@+id/etStudentName" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_edittext_blue" android:paddingHorizontal="12dp" android:hint="e.g. Rahul Sharma" android:textSize="14sp" android:layout_marginTop="4dp" android:layout_marginBottom="12dp" android:inputType="textPersonName" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Class/Semester *" android:textSize="12sp" android:textColor="#64748B" />
+                    <EditText android:id="@+id/etClassSemester" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_edittext_blue" android:paddingHorizontal="12dp" android:hint="e.g. CSE - 3rd Semester" android:textSize="14sp" android:layout_marginTop="4dp" android:inputType="text" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Issue Details -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+                        <androidx.cardview.widget.CardView android:layout_width="40dp" android:layout_height="40dp" app:cardBackgroundColor="#FFF7ED" app:cardCornerRadius="8dp" app:cardElevation="0dp">
+                            <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="10dp" android:src="@drawable/ic_work" app:tint="#F97316" />
+                        </androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Issue Details" android:textColor="#1E293B" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Describe the issue or concern" android:textColor="#64748B" android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Issue Title *" android:textSize="12sp" android:textColor="#64748B" />
+                    <EditText android:id="@+id/etIssueTitle" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_edittext_orange" android:paddingHorizontal="12dp" android:hint="Brief summary of the issue" android:textSize="14sp" android:layout_marginTop="4dp" android:layout_marginBottom="12dp" android:inputType="text" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Detailed Description *" android:textSize="12sp" android:textColor="#64748B" />
+                    <EditText android:id="@+id/etDescription" android:layout_width="match_parent" android:layout_height="100dp" android:background="@drawable/bg_edittext_orange" android:padding="12dp" android:hint="Provide detailed information about the issue" android:textSize="14sp" android:gravity="top" android:layout_marginTop="4dp" android:inputType="textMultiLine" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Issue Category -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+                        <androidx.cardview.widget.CardView android:layout_width="40dp" android:layout_height="40dp" app:cardBackgroundColor="#F5F3FF" app:cardCornerRadius="8dp" app:cardElevation="0dp">
+                            <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="10dp" android:src="@drawable/ic_menu" app:tint="#8B5CF6" />
+                        </androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Issue Category" android:textColor="#1E293B" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select the most appropriate category" android:textColor="#64748B" android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <RadioGroup android:id="@+id/rgCategory" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                        <RadioButton android:id="@+id/rbAcademic" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Academic Issues\nDifficulty with subjects, assignments, etc." android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" android:layout_marginBottom="8dp" />
+                        <RadioButton android:id="@+id/rbBehavioral" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Behavioral Issues\nDisruptive behavior or misconduct" android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" android:layout_marginBottom="8dp" />
+                        <RadioButton android:id="@+id/rbAttendance" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Attendance Issues\nFrequent absences or tardiness" android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" android:layout_marginBottom="8dp" />
+                        <RadioButton android:id="@+id/rbHealth" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Health Issues\nMedical or physical concerns" android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" android:layout_marginBottom="8dp" />
+                        <RadioButton android:id="@+id/rbTechnical" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Technical Issues\nPortal access or device issues" android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" android:layout_marginBottom="8dp" />
+                        <RadioButton android:id="@+id/rbOther" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Other Issues\nAny other concerns" android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Priority Level -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+                        <androidx.cardview.widget.CardView android:layout_width="40dp" android:layout_height="40dp" app:cardBackgroundColor="#FEE2E2" app:cardCornerRadius="8dp" app:cardElevation="0dp">
+                            <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="10dp" android:src="@drawable/ic_error" app:tint="#EF4444" />
+                        </androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Priority Level" android:textColor="#1E293B" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Set the urgency of this case" android:textColor="#64748B" android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <RadioGroup android:id="@+id/rgPriority" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbCritical" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Critical\nRequires immediate action" android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" android:layout_marginBottom="8dp" />
+                        <RadioButton android:id="@+id/rbHigh" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="High\nNeeds attention soon" android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" android:layout_marginBottom="8dp" />
+                        <RadioButton android:id="@+id/rbMedium" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Medium\nNormal priority" android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" android:layout_marginBottom="8dp" android:checked="true" />
+                        <RadioButton android:id="@+id/rbLow" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Low\nLow urgency" android:textSize="13sp" android:padding="12dp" android:button="@null" android:background="@drawable/bg_selectable_item" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Assignment & Timeline -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+                        <androidx.cardview.widget.CardView android:layout_width="40dp" android:layout_height="40dp" app:cardBackgroundColor="#DCFCE7" app:cardCornerRadius="8dp" app:cardElevation="0dp">
+                            <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="10dp" android:src="@drawable/ic_clock" app:tint="#10B981" />
+                        </androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Assignment &amp; Timeline" android:textColor="#1E293B" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Assign responsibility and set deadlines" android:textColor="#64748B" android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Reported By *" android:textSize="12sp" android:textColor="#64748B" />
+                    <EditText android:id="@+id/etReportedBy" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_edittext_green" android:paddingHorizontal="12dp" android:hint="Your Name" android:textSize="14sp" android:layout_marginTop="4dp" android:layout_marginBottom="12dp" android:inputType="textPersonName" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Assign To" android:textSize="12sp" android:textColor="#64748B" />
+                    <EditText android:id="@+id/etAssignTo" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_edittext_green" android:paddingHorizontal="12dp" android:hint="Enter name" android:textSize="14sp" android:layout_marginTop="4dp" android:layout_marginBottom="12dp" android:inputType="textPersonName" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Due Date" android:textSize="12sp" android:textColor="#64748B" />
+                    <EditText android:id="@+id/etDueDate" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_edittext_green" android:paddingHorizontal="12dp" android:hint="Select date" android:textSize="14sp" android:layout_marginTop="4dp" android:focusable="false" android:clickable="true" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="© 2024 PlanMySeat. All rights reserved.\nAbout | Home | Support"
+                android:textAlignment="center"
+                android:textColor="#64748B"
+                android:textSize="10sp"
+                android:layout_marginBottom="24dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_btn_outline"
+            android:textColor="#1E293B"
+            android:layout_marginEnd="8dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSubmitIssue"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1.5"
+            android:text="Submit Issue"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_button_gradient"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardBackgroundColor="#6366F1"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/tvInitials"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="RK"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvFacultyName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Dr. Rajesh Kumar"
+            android:textColor="#1E293B"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tvStatusBadge"
+            app:layout_constraintStart_toEndOf="@id/cvAvatar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDesignation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Professor | CSE"
+            android:textColor="#64748B"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tvFacultyName"
+            app:layout_constraintTop_toBottomOf="@id/tvFacultyName" />
+
+        <TextView
+            android:id="@+id/tvStatusBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_new_badge"
+            android:backgroundTint="#DCFCE7"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:text="Assigned"
+            android:textColor="#166534"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:columnCount="2"
+            app:layout_constraintTop_toBottomOf="@id/tvDesignation">
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_rooms" app:tint="#64748B" />
+                <TextView android:id="@+id/tvRoom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4dp" android:text="Room: A-101" android:textColor="#475569" android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_clock" app:tint="#64748B" />
+                <TextView android:id="@+id/tvTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4dp" android:text="09:00 - 12:00" android:textColor="#475569" android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_marginTop="8dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_history" app:tint="#64748B" />
+                <TextView android:id="@+id/tvDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4dp" android:text="Oct 24, 2024" android:textColor="#475569" android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_marginTop="8dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_person" app:tint="#64748B" />
+                <TextView android:id="@+id/tvDept" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4dp" android:text="Dept: CSE" android:textColor="#475569" android:textSize="12sp" />
+            </LinearLayout>
+        </GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

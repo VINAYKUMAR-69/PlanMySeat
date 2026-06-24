@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="64dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp">
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvAvatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#6366F1"
+            app:cardElevation="0dp">
+            <TextView
+                android:id="@+id/tvUserInitials"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="JS"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignBottom="@id/cvAvatar"
+            android:layout_alignEnd="@id/cvAvatar"
+            android:background="@drawable/bg_new_badge"
+            android:backgroundTint="#10B981" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Smith"
+                android:textColor="#1E293B"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Administrator"
+                android:textColor="#94A3B8"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvCurrentPage"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Dashboard"
+        android:textColor="#64748B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvDevice"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Desktop"
+        android:textColor="#64748B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvBrowser"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Chrome"
+        android:textColor="#64748B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvLoginTime"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="14:30"
+        android:textColor="#64748B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvLastSeen"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Just now"
+        android:textColor="#10B981"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvActionsCount"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="45"
+        android:textColor="#2563EB"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

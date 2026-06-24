@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="16dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tvReportStudentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Student Name"
+        android:textColor="#334155"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/tvReportRegNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:text="Reg No"
+        android:textColor="#64748B"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/tvReportBranch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:text="Branch"
+        android:textColor="#64748B"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/tvReportRoom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="Room"
+        android:textColor="#0F172A"
+        android:textSize="8sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvReportBuilding"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:text="Building"
+        android:textColor="#64748B"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/tvReportDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:text="Date"
+        android:textColor="#64748B"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/tvReportTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="Time"
+        android:textColor="#64748B"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/tvReportFaculty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:text="Faculty"
+        android:textColor="#2563EB"
+        android:textSize="8sp"
+        android:gravity="end" />
+
+</LinearLayout>

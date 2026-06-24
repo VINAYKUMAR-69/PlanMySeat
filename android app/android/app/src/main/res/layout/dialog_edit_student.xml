@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Student Details"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etEditName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="Full Name"
+        android:paddingHorizontal="16dp"
+        android:textSize="14sp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etEditRegNo"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="Registration No"
+        android:paddingHorizontal="16dp"
+        android:textSize="14sp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etEditBranch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="Branch (e.g. CSE)"
+        android:paddingHorizontal="16dp"
+        android:textSize="14sp"
+        android:inputType="textCapCharacters" />
+
+    <EditText
+        android:id="@+id/etEditYear"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="Year (1-4)"
+        android:inputType="number"
+        android:paddingHorizontal="16dp"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etEditExamType"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="Exam Type (Mid/Semester 1)"
+        android:paddingHorizontal="16dp"
+        android:textSize="14sp"
+        android:inputType="text" />
+
+</LinearLayout>

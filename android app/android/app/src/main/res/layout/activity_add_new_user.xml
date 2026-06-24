@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    tools:context=".AddNewUserActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add New User"
+                        android:textColor="#0F172A"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Create a new user account with\nrole and permissions"
+                        android:textColor="#64748B"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBackToUsers"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="Back to\nUsers"
+                    android:textAllCaps="false"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    app:icon="@drawable/ic_back"
+                    app:iconGravity="textStart"
+                    app:iconPadding="4dp"
+                    app:iconSize="16dp"
+                    app:iconTint="#0F172A"
+                    app:strokeColor="#E2E8F0" />
+            </RelativeLayout>
+
+            <!-- Personal Information Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Gradient Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_gradient_blue_purple"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="#33FFFFFF"
+                            android:padding="6dp"
+                            android:src="@drawable/ic_person"
+                            app:tint="@color/white" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Personal Information"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Basic user details and contact information"
+                                android:textColor="#E0E7FF"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Form Fields -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- First Name -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="First Name *"
+                            android:textColor="#334155"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/etFirstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/bg_edittext"
+                            android:hint="John"
+                            android:paddingHorizontal="16dp"
+                            android:textSize="14sp" />
+
+                        <!-- Last Name -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Last Name *"
+                            android:textColor="#334155"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/etLastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/bg_edittext"
+                            android:hint="Smith"
+                            android:paddingHorizontal="16dp"
+                            android:textSize="14sp" />
+
+                        <!-- Email Address -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email Address *"
+                            android:textColor="#334155"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/bg_edittext"
+                            android:hint="john.smith@university.edu"
+                            android:inputType="textEmailAddress"
+                            android:paddingHorizontal="16dp"
+                            android:textSize="14sp" />
+
+                        <!-- Phone Number -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone Number *"
+                            android:textColor="#334155"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/etPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/bg_edittext"
+                            android:hint="+1 234 567 8900"
+                            android:inputType="phone"
+                            android:paddingHorizontal="16dp"
+                            android:textSize="14sp" />
+
+                        <!-- Password -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Password *"
+                            android:textColor="#334155"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_edittext"
+                            android:hint="********"
+                            android:inputType="textPassword"
+                            android:paddingHorizontal="16dp"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="Minimum 8 characters with uppercase, lowercase, and number"
+                            android:textColor="#94A3B8"
+                            android:textSize="11sp" />
+
+                        <!-- Confirm Password -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Confirm Password *"
+                            android:textColor="#334155"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/etConfirmPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_edittext"
+                            android:hint="********"
+                            android:inputType="textPassword"
+                            android:paddingHorizontal="16dp"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Role & Organization Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- User Role -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="User Role *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:id="@+id/btnSelectRole"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_edittext"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_person"
+                            app:tint="#94A3B8" />
+                        <TextView
+                            android:id="@+id/tvRole"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:text="Select Role"
+                            android:textColor="#64748B"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Department -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Department *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:id="@+id/btnSelectDepartment"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_edittext"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_work"
+                            app:tint="#94A3B8" />
+                        <TextView
+                            android:id="@+id/tvDepartment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:text="Select Department"
+                            android:textColor="#64748B"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Employee ID -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Employee ID *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/etEmployeeId"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_edittext"
+                        android:hint="EMP-12345"
+                        android:paddingHorizontal="16dp"
+                        android:textSize="14sp" />
+
+                    <!-- Date of Joining -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Joining *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:id="@+id/btnSelectJoiningDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_edittext"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_calendar"
+                            app:tint="#94A3B8" />
+                        <TextView
+                            android:id="@+id/tvJoiningDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            android:text="Select Date"
+                            android:textColor="#64748B"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Account Status -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Account Status"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <RadioGroup
+                        android:id="@+id/rgStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/rbActive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Active"
+                            android:textColor="#334155"
+                            android:textSize="14sp" />
+                        <RadioButton
+                            android:id="@+id/rbInactive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:text="Inactive"
+                            android:textColor="#334155"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Bottom Actions -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnReset"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1.1"
+                        android:text="Reset Form"
+                        android:textAllCaps="false"
+                        android:textColor="#64748B"
+                        android:textSize="12sp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:paddingHorizontal="4dp"
+                        app:icon="@drawable/ic_history"
+                        app:iconPadding="4dp"
+                        app:iconSize="16dp"
+                        app:iconTint="#64748B"
+                        app:strokeColor="#E2E8F0"
+                        app:cornerRadius="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancel"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="0.9"
+                        android:layout_marginStart="8dp"
+                        android:text="Cancel"
+                        android:textAllCaps="false"
+                        android:textColor="#64748B"
+                        android:textSize="13sp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:strokeColor="#E2E8F0"
+                        app:cornerRadius="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCreateUser"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1.6"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:background="@drawable/bg_gradient_blue_purple"
+                        android:text="Create User"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:icon="@drawable/ic_person_add"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/white"
+                        app:iconSize="18dp"
+                        app:cornerRadius="8dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Footer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="© 2026 PlanMySeat. All rights reserved."
+                    android:textColor="#94A3B8"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="About"
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp"
+                        android:padding="4dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Terms"
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp"
+                        android:layout_marginHorizontal="12dp"
+                        android:padding="4dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Support"
+                        android:textColor="#94A3B8"
+                        android:textSize="12sp"
+                        android:padding="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

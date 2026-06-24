@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">Automatic Exam Seating</string>
+    <string name="plan_my_seat">PlanMySeat</string>
+    <string name="welcome_tagline">Smart Seating. Simplified.</string>
+    <string name="welcome_sub_tagline">Intelligent Exam Seating System for Modern Universities</string>
+    <string name="tag_automated">🚀 Automated Allocation</string>
+    <string name="tag_analytics">📊 Real-time Analytics</string>
+    <string name="tag_faculty">👥 Faculty Management</string>
+    <string name="tag_mobile">📱 Mobile Friendly</string>
+    <string name="get_started">Get Started  →</string>
+    <string name="already_have_account_signin">Already have an account? Sign In</string>
+    <string name="stat_students_count">50K+</string>
+    <string name="stat_students_label">Students Managed</string>
+    <string name="stat_exams_count">1000+</string>
+    <string name="stat_exams_label">Exams Conducted</string>
+    <string name="stat_success_count">99.9%</string>
+    <string name="stat_success_label">Success Rate</string>
+    <string name="app_logo_desc">App Logo</string>
+
+    <string name="exam_seating_system">Exam Seating System</string>
+    <string name="enter_credentials">Enter your credentials to access the system</string>
+    <string name="email">Email</string>
+    <string name="email_hint">admin@example.com</string>
+    <string name="password">Password</string>
+    <string name="password_hint">••••••••</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="login_as_admin">Login as Admin</string>
+    <string name="dont_have_account">Don\'t have an account? </string>
+    <string name="sign_up">Sign up</string>
+
+    <!-- Sign Up Screen -->
+    <string name="create_account">Create Account</string>
+    <string name="sign_up_desc">Sign up to start managing exam seating</string>
+    <string name="full_name">Full Name</string>
+    <string name="full_name_hint">John Doe</string>
+    <string name="sign_up_email_hint">john@example.com</string>
+    <string name="role">Role</string>
+    <string name="select_role">Select role</string>
+    <string name="college_org">College/Organization</string>
+    <string name="college_hint">IIT Delhi</string>
+    <string name="btn_create_account">Create Account</string>
+    <string name="already_have_account">Already have an account? </string>
+    <string name="login">Login</string>
+
+    <!-- Forgot Password Screen -->
+    <string name="reset_password">Reset Password</string>
+    <string name="reset_password_desc">Enter your email to receive a password reset link</string>
+    <string name="email_address">Email Address</string>
+    <string name="send_reset_link">Send Reset Link</string>
+    <string name="back_to_login">Back to Login</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_welcome">Welcome back! Here\'s an overview of your system.</string>
+    <string name="total_students">Total Students</string>
+    <string name="available_rooms">Available Rooms</string>
+    <string name="seats_allocated">Seats Allocated</string>
+    <string name="active_exams">Active Exams</string>
+    <string name="branch_distribution">Branch Distribution</string>
+    <string name="branch_distribution_desc">Number of students per branch</string>
+    <string name="student_distribution">Student Distribution</string>
+    <string name="pie_chart_desc">Pie chart view of branch distribution</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="quick_actions_desc">Frequently used operations</string>
+    <string name="add_student">Add Student</string>
+    <string name="edit_student">Edit Student</string>
+    <string name="delete_student">Delete Student</string>
+    <string name="add_room">Add Room</string>
+    <string name="generate_seating">Generate Seating</string>
+    <string name="view_reports">View Reports</string>
+    <string name="system_overview">System Overview</string>
+    <string name="system_overview_desc">Current system status and capacity</string>
+    <string name="total_capacity">Total Capacity</string>
+    <string name="allocated_seats">Allocated Seats</string>
+    <string name="remaining_students">Remaining Students</string>
+
+    <string name="no_available_rooms_found">No available rooms found</string>
+
+    <!-- Student Issues Dashboard -->
+    <string name="reported_format">Reported %1$s</string>
+    <string name="issue_category_format">%1$s Issue</string>
+
+    <!-- Actions -->
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="bulk_delete">Bulk Delete</string>
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2D3748" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="12dp">
+
+        <CheckBox
+            android:id="@+id/cbSelectStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/blue_primary" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rahul Sharma"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvExamType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mid-Term"
+                android:textColor="#3B82F6"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvRegNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CS2021001"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvBranch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:background="@drawable/bg_branch_badge"
+            android:gravity="center"
+            android:paddingVertical="2dp"
+            android:text="CSE"
+            android:textColor="#9CA3AF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="40dp"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/ivEditStudent"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_edit"
+            app:tint="@color/blue_primary"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/edit_student" />
+
+        <ImageView
+            android:id="@+id/ivDeleteStudent"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="4dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_delete"
+            app:tint="#EF4444"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Delete Student" />
+
+    </LinearLayout>
+</LinearLayout>

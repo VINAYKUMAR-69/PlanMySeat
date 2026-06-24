@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:orientation="vertical"
+    tools:context=".ConflictDetectionActivity">
+
+    <!-- Header / Menu Bar -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:background="@color/white"
+            android:paddingHorizontal="16dp">
+
+            <!-- Back Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBack"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                app:cardBackgroundColor="#FEE2E2"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_back"
+                    app:tint="#EF4444"
+                    android:contentDescription="Back" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Menu Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMenuContainer"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="12dp"
+                app:cardBackgroundColor="#DBEAFE"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cvBack"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    android:id="@+id/ivMenu"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_menu"
+                    app:tint="#2563EB"
+                    android:contentDescription="Menu" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Logo -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLogoContainer"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="16dp"
+                app:cardBackgroundColor="@color/blue_primary"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cvMenuContainer"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_school"
+                    app:tint="@color/white"
+                    android:contentDescription="Logo" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Notifications -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvNotificationContainer"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="12dp"
+                    app:cardBackgroundColor="#FEF3C7"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_notifications"
+                            app:tint="#D97706" />
+
+                        <TextView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="end|top"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_dark_button"
+                            android:backgroundTint="#EF4444"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Profile -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvProfile"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    app:cardBackgroundColor="@color/blue_primary"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="2dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conflict Detection"
+                android:textColor="#0F172A"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Identify and resolve seating conflicts"
+                android:textColor="#64748B"
+                android:textSize="14sp" />
+
+            <!-- No Conflicts Found Banner -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvStatusBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="#F0FDF4"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:id="@+id/llBannerBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:background="@drawable/bg_dashed_border"
+                    android:backgroundTint="#DCFCE7">
+
+                    <ImageView
+                        android:id="@+id/ivStatusIcon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_check_circle"
+                        app:tint="#10B981" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tvStatusTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No Conflicts Found"
+                            android:textColor="#166534"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvStatusDesc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="All students are properly\nseparated by branch"
+                            android:textColor="#166534"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Total Conflicts Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Conflicts"
+                        android:textColor="#64748B"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/tvTotalConflicts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="0"
+                        android:textColor="#10B981"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Rooms Affected Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rooms Affected"
+                        android:textColor="#64748B"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/tvRoomsAffected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="0"
+                        android:textColor="#2563EB"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Conflict Rate Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Conflict Rate"
+                        android:textColor="#64748B"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/tvConflictRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="0%"
+                        android:textColor="#A855F7"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Conflict Analysis by Branch Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Conflict Analysis by Branch"
+                        android:textColor="#0F172A"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Number of conflicts per branch"
+                        android:textColor="#64748B"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/llBranchAnalysisContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivAnalysisIcon"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_check_circle"
+                            app:tint="#10B981" />
+
+                        <TextView
+                            android:id="@+id/tvAnalysisText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="All branches are properly separated"
+                            android:textColor="#64748B"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

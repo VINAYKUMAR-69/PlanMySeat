@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:orientation="vertical"
+    tools:context=".AiOptimizationActivity">
+
+    <!-- Header -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="AI Optimization"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_new_badge"
+                android:backgroundTint="#A855F7"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:text="✨ AI Powered"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI Seat\nOptimization"
+                android:textColor="#0F172A"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Use artificial intelligence to optimize\nseating arrangements"
+                android:textColor="#64748B"
+                android:textSize="14sp" />
+
+            <!-- Main AI Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="#FDF4FF"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="32dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/ic_ai_magic"
+                        app:tint="#A855F7" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Intelligent Seating\nAlgorithm"
+                        android:textAlignment="center"
+                        android:textColor="#0F172A"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Our AI analyzes multiple factors to create the optimal seating arrangement"
+                        android:textAlignment="center"
+                        android:textColor="#64748B"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOptimizeAI"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="24dp"
+                        android:backgroundTint="#A855F7"
+                        android:text="Optimize with AI"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:cornerRadius="12dp"
+                        app:icon="@drawable/ic_ai_magic"
+                        app:iconPadding="8dp"
+                        app:iconTint="@color/white" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Features Cards -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_active_exams"
+                        app:tint="#F59E0B"
+                        android:background="#FEF3C7" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Smart Distribution" android:textColor="#0F172A" android:textStyle="bold" android:textSize="15sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Intelligently distributes students across rooms" android:textColor="#64748B" android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_visibility"
+                        app:tint="#3B82F6"
+                        android:background="#EFF6FF" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Conflict Prevention" android:textColor="#0F172A" android:textStyle="bold" android:textSize="15sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Minimizes same-branch adjacencies" android:textColor="#64748B" android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_seats"
+                        app:tint="#10B981"
+                        android:background="#F0FDF4" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Capacity Optimization" android:textColor="#0F172A" android:textStyle="bold" android:textSize="15sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Maximizes room utilization efficiency" android:textColor="#64748B" android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Bottom Features List -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AI Optimization Features"
+                        android:textColor="#0F172A"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Advanced capabilities powered\nby machine learning"
+                        android:textColor="#64748B"
+                        android:textSize="13sp" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_check_circle" app:tint="#A855F7"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Branch Separation Algorithm" android:textColor="#0F172A" android:textStyle="bold" android:textSize="13sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ensures maximum distance between students" android:textColor="#64748B" android:textSize="11sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_check_circle" app:tint="#3B82F6"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Predictive Conflict Detection" android:textColor="#0F172A" android:textStyle="bold" android:textSize="13sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Identifies potential issues before they occur" android:textColor="#64748B" android:textSize="11sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_check_circle" app:tint="#10B981"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Adaptive Learning" android:textColor="#0F172A" android:textStyle="bold" android:textSize="13sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Improves with each allocation based on historical data" android:textColor="#64748B" android:textSize="11sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_check_circle" app:tint="#F59E0B"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Multi-objective Optimization" android:textColor="#0F172A" android:textStyle="bold" android:textSize="13sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Balances multiple criteria simultaneously" android:textColor="#64748B" android:textSize="11sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

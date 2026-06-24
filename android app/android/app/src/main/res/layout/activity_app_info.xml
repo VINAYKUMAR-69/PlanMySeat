@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    tools:context=".AppInfoActivity">
+
+    <!-- Header -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/headerCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/white"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black"
+                android:contentDescription="Back" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLogo"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                app:cardBackgroundColor="@color/blue_primary"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivBack"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_calendar"
+                    app:tint="@color/white"
+                    android:contentDescription="Logo" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Exam Seating"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cvLogo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black"
+                android:contentDescription="Menu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/headerCard"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="20dp">
+
+            <!-- App Icon -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/blue_primary"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_monitor"
+                    app:tint="@color/white" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="App Information"
+                android:textColor="#0F172A"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_new_badge"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Version 1.0.0"
+                android:textColor="#64748B"
+                android:textSize="12sp" />
+
+            <!-- Info Details Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Version" android:textColor="#64748B" android:textSize="14sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="1.0.0" android:textColor="#0F172A" android:textStyle="bold" android:textSize="14sp" />
+                    </RelativeLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F1F5F9" />
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Build" android:textColor="#64748B" android:textSize="14sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="2026.04.27" android:textColor="#0F172A" android:textStyle="bold" android:textSize="14sp" />
+                    </RelativeLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F1F5F9" />
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Platform" android:textColor="#64748B" android:textSize="14sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="Web &amp; Mobile" android:textColor="#0F172A" android:textStyle="bold" android:textSize="14sp" />
+                    </RelativeLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F1F5F9" />
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="License" android:textColor="#64748B" android:textSize="14sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="Educational Use" android:textColor="#0F172A" android:textStyle="bold" android:textSize="14sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Technology Stack -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_gravity="start"
+                android:text="Technology Stack"
+                android:textColor="#0F172A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:columnCount="2">
+
+                <!-- React 18 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:background="#EFF6FF" android:padding="6dp" android:src="@drawable/ic_work" app:tint="#2563EB"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="React 18" android:textColor="#1E293B" android:textSize="13sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- TypeScript -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:background="#EFF6FF" android:padding="6dp" android:src="@drawable/ic_edit" app:tint="#2563EB"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="TypeScript" android:textColor="#1E293B" android:textSize="13sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Tailwind CSS -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:background="#F0FDFA" android:padding="6dp" android:src="@drawable/ic_sun" app:tint="#0D9488"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Tailwind CSS" android:textColor="#1E293B" android:textSize="13sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- React Router -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:background="#FEF2F2" android:padding="6dp" android:src="@drawable/ic_filter" app:tint="#DC2626"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="React Router" android:textColor="#1E293B" android:textSize="13sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Recharts -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:background="#F5F3FF" android:padding="6dp" android:src="@drawable/vd_pie_chart" app:tint="#7C3AED"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Recharts" android:textColor="#1E293B" android:textSize="13sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Shadcn/ui -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:gravity="center_vertical">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:background="#F8FAFC" android:padding="6dp" android:src="@drawable/ic_settings" app:tint="#0F172A"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Shadcn/ui" android:textColor="#1E293B" android:textSize="13sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+            <!-- Key Features Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_ai_magic" app:tint="#2563EB"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Key Features" android:textColor="#0F172A" android:textStyle="bold" android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="vertical">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Smart seating allocation algorithm" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Multi-branch conflict detection" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Room-wise seating reports" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="CSV/Excel/PDF export" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Dark mode support" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Responsive mobile design" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Real-time notifications" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Drag-and-drop seat adjustment" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Capacity planning tools" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="6dp" android:gravity="center_vertical">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_check_circle" app:tint="#10B981" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Analytics dashboard" android:textColor="#475569" android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Storage & Performance Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_save" app:tint="#7C3AED"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Storage &amp; Performance" android:textColor="#0F172A" android:textStyle="bold" android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="vertical">
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Local Storage" android:textColor="#1E293B" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="Browser-based" android:textColor="#0F172A" android:textSize="13sp" android:textStyle="bold" />
+                        </RelativeLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="All data stored locally in your browser" android:textColor="#64748B" android:textSize="11sp" />
+
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Data Privacy" android:textColor="#1E293B" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="100% Private" android:textColor="#10B981" android:textSize="13sp" android:textStyle="bold" />
+                        </RelativeLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="No data sent to external servers" android:textColor="#64748B" android:textSize="11sp" />
+
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Performance" android:textColor="#1E293B" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="Optimized" android:textColor="#2563EB" android:textSize="13sp" android:textStyle="bold" />
+                        </RelativeLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Fast, responsive mobile experience" android:textColor="#64748B" android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Secure & Private Banner -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_login_gradient"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+                    <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_lock" app:tint="@color/white" android:alpha="0.8"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Secure &amp; Private" android:textColor="@color/white" android:textStyle="bold" android:textSize="15sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Your student data never leaves your device. All processing happens locally, ensuring complete privacy and data security." android:textColor="#BFDBFE" android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Developer Info Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Developed by" android:textColor="#64748B" android:textSize="13sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Educational Technology Solutions" android:textColor="#0F172A" android:textSize="15sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Built with ❤ for educational institutions" android:textColor="#94A3B8" android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:text="© 2026 Exam Seating System. All rights reserved."
+                android:textColor="#94A3B8"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:elevation="8dp"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@color/bottom_nav_colors"
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seating Report"
+        android:textColor="#0F172A"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvReportSummaryHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Complete seating arrangement report"
+        android:textColor="#64748B"
+        android:textSize="14sp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPreview"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:backgroundTint="#2563EB"
+                android:paddingHorizontal="8dp"
+                android:text="Preview"
+                android:textSize="9sp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_visibility"
+                app:iconSize="14dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRoomWise"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#4F46E5"
+                android:paddingHorizontal="8dp"
+                android:text="Room"
+                android:textSize="9sp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_person"
+                app:iconSize="14dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExcel"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#059669"
+                android:paddingHorizontal="8dp"
+                android:text="Excel"
+                android:textSize="9sp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_download"
+                app:iconSize="14dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPrint"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#10B981"
+                android:paddingHorizontal="8dp"
+                android:text="PDF"
+                android:textSize="9sp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_print"
+                app:iconSize="14dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeleteReport"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#EF4444"
+                android:paddingHorizontal="8dp"
+                android:text="Delete"
+                android:textSize="9sp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_delete"
+                app:iconSize="14dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:columnCount="2">
+
+        <!-- Total Students -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            app:cardBackgroundColor="#EFF6FF"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total Students" android:textColor="#3B82F6" android:textSize="12sp" android:textStyle="bold" />
+                <TextView android:id="@+id/tvTotalStudentsHeader" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="#1E40AF" android:textSize="24sp" android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Rooms Used -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            app:cardBackgroundColor="#F0FDF4"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rooms Used" android:textColor="#10B981" android:textSize="12sp" android:textStyle="bold" />
+                <TextView android:id="@+id/tvRoomsUsedHeader" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="#065F46" android:textSize="24sp" android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Branches -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            app:cardBackgroundColor="#FFF7ED"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Branches" android:textColor="#F59E0B" android:textSize="12sp" android:textStyle="bold" />
+                <TextView android:id="@+id/tvBranchesHeader" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="#92400E" android:textSize="24sp" android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Exam Type -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            app:cardBackgroundColor="#FAF5FF"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Exam Type" android:textColor="#8B5CF6" android:textSize="12sp" android:textStyle="bold" />
+                <TextView android:id="@+id/tvExamTypeHeader" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="N/A" android:textColor="#5B21B6" android:textSize="18sp" android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+
+    <!-- Table Column Headers -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#F1F5F9"
+        android:orientation="horizontal"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Name" android:textStyle="bold" android:textSize="8sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.8" android:text="Reg No" android:textStyle="bold" android:textSize="8sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.6" android:text="Branch" android:textStyle="bold" android:textSize="8sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.5" android:text="Room No" android:textStyle="bold" android:textSize="8sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.7" android:text="Building" android:textStyle="bold" android:textSize="8sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.7" android:text="Date" android:textStyle="bold" android:textSize="8sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.5" android:text="Time" android:textStyle="bold" android:textSize="8sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.8" android:text="Faculty" android:textStyle="bold" android:textSize="8sp" android:gravity="end" />
+    </LinearLayout>
+
+</LinearLayout>
