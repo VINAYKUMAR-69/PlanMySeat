@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import StatsCard from '../components/StatsCard';
 import { DonutChart, BarChart, LineChart } from '../components/Charts';
-import { FaUsers, FaCalendarCheck, FaClock, FaStar, FaBuilding } from 'react-icons/fa';
+import { FaUsers, FaCalendarCheck, FaClock, FaStar } from 'react-icons/fa';
 
 export default function DashboardFaculty({ setCurrentView }) {
   const { faculties, seatingPlans, user } = useApp();
@@ -144,7 +143,7 @@ export default function DashboardFaculty({ setCurrentView }) {
           <p className="card-subtitle margin-bottom-md">Invigilators with highest ratings</p>
           {topPerformers.length > 0 ? (
             <div className="performers-list">
-              {topPerformers.map((perf, idx) => (
+              {topPerformers.map((perf) => (
                 <div className="performer-row" key={perf.id}>
                   <div className="perf-avatar">
                     {perf.name.slice(0, 2).toUpperCase()}
