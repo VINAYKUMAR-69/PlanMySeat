@@ -40,6 +40,7 @@ export default function SeatingAllocationSetup({ setCurrentView }) {
       }
       setRoomSelectionCount(Math.max(1, Math.min(needed, maxRooms)));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [examType, useAllOverride, students, rooms]);
 
   const handleIncrement = () => {

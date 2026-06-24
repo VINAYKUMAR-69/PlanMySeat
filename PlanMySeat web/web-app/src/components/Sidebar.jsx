@@ -1,4 +1,3 @@
-import React from 'react';
 import { useApp } from '../context/AppContext';
 import { 
   FaHome, 
@@ -10,7 +9,6 @@ import {
   FaBell, 
   FaUser, 
   FaLifeRing, 
-  FaCog, 
   FaSignOutAlt, 
   FaMoon, 
   FaSun 

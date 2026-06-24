@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // --- Bar Chart Component ---
 export function BarChart({ data = {} }) {
@@ -9,7 +9,7 @@ export function BarChart({ data = {} }) {
     return <div className="chart-empty">No data to display</div>;
   }
 
-  const values = entries.map(([_, val]) => val);
+  const values = entries.map(([, val]) => val);
   const maxValue = Math.max(...values, 1);
 
   // Layout parameters
@@ -149,7 +149,7 @@ export function PieChart({ data = {}, donut = false }) {
     return <div className="chart-empty">No data to display</div>;
   }
 
-  const total = entries.reduce((acc, [_, v]) => acc + v, 0);
+  const total = entries.reduce((acc, [, v]) => acc + v, 0);
 
   const colors = [
     'hsl(250, 84%, 54%)',
