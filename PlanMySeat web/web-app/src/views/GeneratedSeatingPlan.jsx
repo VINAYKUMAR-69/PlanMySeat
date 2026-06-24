@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { FaPrint, FaDownload, FaUsers, FaArrowLeft, FaFilter, FaSearch } from 'react-icons/fa';
+import { FaPrint, FaDownload, FaUsers, FaArrowLeft, FaSearch } from 'react-icons/fa';
 
 export default function GeneratedSeatingPlan({ setCurrentView }) {
   const { currentSeatingPlan, seatingPlans } = useApp();

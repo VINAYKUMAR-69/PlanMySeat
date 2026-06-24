@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useApp } from '../context/AppContext';
 import Modal from '../components/Modal';
-import { FaPlus, FaTrash, FaStar, FaEnvelope, FaPhone, FaBuilding, FaBriefcase, FaSync, FaUpload, FaDownload } from 'react-icons/fa';
+import { FaPlus, FaTrash, FaStar, FaPhone, FaBuilding, FaBriefcase, FaSync, FaUpload, FaDownload } from 'react-icons/fa';
 
 export default function Faculties() {
   const { faculties, addFaculty, deleteFaculty, fetchFaculties, loading } = useApp();

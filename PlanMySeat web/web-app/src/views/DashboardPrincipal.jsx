@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import StatsCard from '../components/StatsCard';
 import { BarChart, PieChart } from '../components/Charts';
@@ -6,7 +6,7 @@ import { FaUserGraduate, FaDoorOpen, FaChair, FaChartPie, FaPlus, FaCalendarPlus
 import Modal from '../components/Modal';
 
 export default function DashboardPrincipal({ setCurrentView }) {
-  const { students, rooms, notifications, currentSeatingPlan, triggerSystemNotification } = useApp();
+  const { students, rooms, currentSeatingPlan, triggerSystemNotification } = useApp();
   
   // AI Optimization Modal state
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
@@ -218,7 +218,7 @@ export default function DashboardPrincipal({ setCurrentView }) {
       {/* Pulse rotating AI Optimization Floating Button */}
       <button 
         className="ai-optimization-fab"
-        onClick={() => { resetMessages(); setIsAiModalOpen(true); }}
+        onClick={() => { setIsAiModalOpen(true); }}
         title="AI Seating Optimizer"
         id="btn-ai-optimizer"
       >
