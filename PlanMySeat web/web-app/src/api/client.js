@@ -25,6 +25,7 @@ const handleResponse = async (response) => {
       errorMessage = errBody.message || errorMessage;
     } catch {
       // ignore
+    }
     throw new Error(errorMessage);
   }
   const data = await response.json();
